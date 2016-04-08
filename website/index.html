@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <!--<script src="http://maps.googleapis.com/maps/api/js"></script>
   <script>
   function initialize() {
     var mapProp = {
@@ -18,8 +18,7 @@
     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
   }
   google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-<div style='float: right;'><a href="login.html">Log in</a></div>
+</script> -->
 </head>
 <body>
 <style>
@@ -27,21 +26,22 @@ body {
   background: #EFECCA;
   p: white;
 }
+.slider-width100
+{
+    width: 100px !important;
+}
 </style>
 <div class="container">
   <h3 style="color:#002F2F;">Welcome to Camp&Uuml;s!</h3>
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-    <li><a data-toggle="tab" href="#fl">Friends List</a></li>
+    <!-- <li><a data-toggle="tab" href="#map">Map</a></li> -->
+    <li><a data-toggle="tab" href="#settings">Settings</a></li>
     <li><a data-toggle="tab" href="#profile">Profile</a></li>
   </ul>
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3 style="color:#002F2F;">RPI's Campus</h3>
-      <div id="googleMap" style="width:500px;height:350px;"></div>
-    </div>
-    <div id="fl" class="tab-pane fade">
       <center>
       <h3>Friends List</h3>
 
@@ -56,20 +56,36 @@ body {
         </ul>
       </center> 
     </div>
-    <div id="profile" class="tab-pane fade">
-      <h3>Profile</h3>
-      <p id="name" style="text-align:center;font-size:20px;color:#046380;">Layla</p>
-      <center><img src="layla.png" alt="Bear" align="middle" style="width:168px;height:168px;"></center>
-        <center><input type="text" id="nickName" size ="20"/>
-        <input type="button" id="nickChange" value="Change Nick Name" onclick="changeName()"><br>
+    <!-- <div id="map" class="tab-pane fade">
+      <h3 style="color:#002F2F;">RPI's Campus</h3>
+      <div id="googleMap" style="width:500px;height:350px;"></div>
+    </div> -->
+    <div id="settings" class="tab-pane fade">
+      <div id="settings" style="font-size:20px;color:#046380;" width="400px">
+        <center>
+          <span>Share Location</span>
+          <input type="range"  min="0" max="1" class="slider-width100"/>
         </center>
+      </div>
+      <center>
+        <input type="text" id="nickName" size ="20"/>
+        <input type="button" id="nickChange" value="Change Nick Name" onclick="changeName()"><br>
+        <form name="myWebForm">
+          <input type="file" name="uploadField">
+        </form>
+      </center>
+    </div>
+    <div id="profile" class="tab-pane fade">
+      <p id="name" style="text-align:center;font-size:20px;color:#046380;">Layla <img src="green.png" alt="On Campus" style="width:12px;height:12px;"></p>
+      <center><img src="layla.png" alt="Bear" align="middle" style="width:168px;height:168px;">
+        <p id="name" style="text-align:center;font-size:20px;color:#000000;">School: RPI</p></center>
     </div>
   </div>
 </div>
 <script>
 function addEmail(){
     var input = document.getElementById("Email");
-    var circ = ' <img src="red.png" alt="Off Campus" style="width:15px;height:15px;">';
+    var circ = ' <img src="red.png" alt="Off Campus" style="width:12px;height:12px;">';
     var fin = document.createElement("LI");
     fin.innerHTML = input.value.concat(circ);
     input.value = "";
@@ -84,6 +100,7 @@ function changeName(){
 function changePic(){
     var x = document.createElement("INPUT");
     x.setAttribute("type", "file");
+    x.setAttribute("align", "center");
     document.body.appendChild(x);
 }
 </script>
