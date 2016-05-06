@@ -7,18 +7,6 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <!--<script src="http://maps.googleapis.com/maps/api/js"></script>
-  <script>
-  function initialize() {
-    var mapProp = {
-      center:new google.maps.LatLng(42.72993,-73.67661),
-      zoom:15,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
-    };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
-</script> -->
 </head>
 <body>
 <style>
@@ -35,7 +23,6 @@ body {
   <h3 style="color:#002F2F;">Welcome to Camp&Uuml;s!</h3>
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-    <!-- <li><a data-toggle="tab" href="#map">Map</a></li> -->
     <li><a data-toggle="tab" href="#settings">Settings</a></li>
     <li><a data-toggle="tab" href="#profile">Profile</a></li>
   </ul>
@@ -49,17 +36,13 @@ body {
         <input type="button" id="btnAdd" value="Add" onclick="addEmail()">
 
         <ul style="list-style-type:none" id="friends">
-          <li>Dylan <img src="green.png" alt="On Campus" style="width:15px;height:15px;"> </li>
-          <li>Skyler <img src="green.png" alt="On Campus" style="width:15px;height:15px;"> </li>
-          <li>Arya <img src="red.png" alt="Off Campus" style="width:12px;height:12px;"> </li>
-          <li>Colin <img src="red.png" alt="Off Campus" style="width:12px;height:12px;"> </li>
+          <li>Dylan <img src="images/green.png" alt="On Campus" style="width:15px;height:15px;"> </li>
+          <li>Skyler <img src="images/green.png" alt="On Campus" style="width:15px;height:15px;"> </li>
+          <li>Arya <img src="images/red.png" alt="Off Campus" style="width:12px;height:12px;"> </li>
+          <li>Colin <img src="images/red.png" alt="Off Campus" style="width:12px;height:12px;"> </li>
         </ul>
       </center> 
     </div>
-    <!-- <div id="map" class="tab-pane fade">
-      <h3 style="color:#002F2F;">RPI's Campus</h3>
-      <div id="googleMap" style="width:500px;height:350px;"></div>
-    </div> -->
     <div id="settings" class="tab-pane fade">
       <div id="settings" style="font-size:20px;color:#046380;" width="400px">
         <center>
@@ -76,8 +59,8 @@ body {
       </center>
     </div>
     <div id="profile" class="tab-pane fade">
-      <p id="name" style="text-align:center;font-size:20px;color:#046380;">Layla <img src="green.png" alt="On Campus" style="width:12px;height:12px;"></p>
-      <center><img src="layla.png" alt="Bear" align="middle" style="width:168px;height:168px;">
+      <p id="name" style="text-align:center;font-size:20px;color:#046380;">Layla <img src="images/green.png" alt="On Campus" style="width:12px;height:12px;"></p>
+      <center><img src="images/layla.png" alt="Bear" align="middle" style="width:168px;height:168px;">
         <p id="name" style="text-align:center;font-size:20px;color:#000000;">School: RPI</p></center>
     </div>
   </div>
@@ -85,7 +68,7 @@ body {
 <script>
 function addEmail(){
     var input = document.getElementById("Email");
-    var circ = ' <img src="red.png" alt="Off Campus" style="width:12px;height:12px;">';
+    var circ = ' <img src="images/red.png" alt="Off Campus" style="width:12px;height:12px;">';
     var fin = document.createElement("LI");
     fin.innerHTML = input.value.concat(circ);
     input.value = "";
